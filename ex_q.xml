@@ -1,0 +1,60 @@
+<events>
+	<event>
+		<id>560</id>
+		<title>Your Favourite Band (Not)</title>
+		<date>13.04.2013 20:00</date>
+		<timestamp>1365868800</timestamp>
+		<club>
+			<club_id>11</club_id>
+			<club_name>Arena Moscow</club_name>
+			<club_adress>Club next door</club_adress>
+			<club_geo>55.784765:37.560043</club_geo>
+			<club_phone>+7 (495) 940 67 55</club_phone>
+			<club_logo>http://actionlist.ru/img/club/11.jpg</club_logo>
+			<club_url>http://actionlist.ru/clubs/club/16_tons</club_url>
+		</club>
+		<images>
+			<afisha>http://actionlist.ru/img/event/560.jpg</afisha>
+			<afisha_small>http://actionlist.ru/img/event/560_sm.jpg</afisha_small>
+		</images>
+		<genres>
+			<genre>heavy metal</genre>
+			<genre>metal</genre>
+			<genre>rock</genre>
+			<genre>russian</genre>
+		</genres>
+		<ticket>http://ponominalu.ru/event/id/472953?promote=actionlist</ticket>
+		<description>temp desc</description>
+		<cancellation>0</cancellation>
+		<url>http://actionlist.ru/events/event/aria_13.04</url>
+	</event>
+	<event>
+		<id>561</id>
+		<title>Your Least Favourite Band (Yes)</title>
+		<date>13.04.2013 20:00</date>
+		<timestamp>1365868800</timestamp>
+		<club>
+			<club_id>11</club_id>
+			<club_name>Arena Moscow</club_name>
+			<club_adress>Club next door</club_adress>
+			<club_geo>55.784765:37.560043</club_geo>
+			<club_phone>+7 (495) 940 67 55</club_phone>
+			<club_logo>http://actionlist.ru/img/club/11.jpg</club_logo>
+			<club_url>http://actionlist.ru/clubs/club/16_tons</club_url>
+		</club>
+		<images>
+			<afisha>http://actionlist.ru/img/event/560.jpg</afisha>
+			<afisha_small>http://actionlist.ru/img/event/560_sm.jpg</afisha_small>
+		</images>
+		<genres>
+			<genre>heavy metal</genre>
+			<genre>metal</genre>
+			<genre>rock</genre>
+			<genre>russian</genre>
+		</genres>
+		<ticket>http://ponominalu.ru/event/id/472953?promote=actionlist</ticket>
+		<description>temp desc</description>
+		<cancellation>0</cancellation>
+		<url>http://actionlist.ru/events/event/aria_13.04</url>
+	</event>
+</events>
