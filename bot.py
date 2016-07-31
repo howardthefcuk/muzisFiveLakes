@@ -5,8 +5,6 @@ import json
 import requests
 from urllib.request import urlopen
 from telebot import types
-from flask import Flask, request
-import os
 
 bot = telebot.TeleBot(config.token)
 
@@ -73,31 +71,9 @@ def eventDetails(message):
 				url = 'http://f.muzis.ru/' + str(i["file_mp3"])
 				result = urlopen(url).read()
 				bot.send_audio(message.chat.id, result, 300, i["track_name"], i["performer"])
-"""
+
+
 if __name__ == '__main__':
 	#print(getEventList("MSK"))
+	bot.remove_webhook()
 	bot.polling(none_stop=True)
-"""
-server = Flask(__name__)
-
-# Получение сообщений
-@server.route("/bot", methods=['POST'])
-def getMessage():
-    # Чтение данных от серверов telegram
-    bot.process_new_messages(
-        [telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message
-        ])
-    return "!", 200
- 
-# Установка webhook
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    # Если вы будете использовать хостинг или сервис без https
-    # то вам необходимо создать сертификат и 
-    # добавить параметр certificate=open('ваш сертификат.pem')
-    bot.set_webhook(url="https://tbwallbot.herokuapp.com/bot")
-    return "!", 200
- 
-# Запуск сервера
-server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
