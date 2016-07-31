@@ -1,0 +1,4 @@
+xmltodict
+flask
+pyTelegramBotAPI
+requests
