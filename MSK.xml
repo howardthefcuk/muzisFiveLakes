@@ -1,0 +1,54 @@
+<events>
+	<event>
+		<id>560</id>
+		<title>Radiohead</title>
+		<date>31.07.2016 20:00</date>
+		<timestamp>1365868800</timestamp>
+		<club>
+			<club_id>11</club_id>
+			<club_name>Olimpiyskiy</club_name>
+			<club_adress>Olimpiyskiy pr. 16/2</club_adress>
+			<club_geo>55.784765:37.560043</club_geo>
+			<club_phone>+7 (495) 786 33 33</club_phone>
+			<club_logo>http://actionlist.ru/img/club/11.jpg</club_logo>
+			<club_url>http://actionlist.ru/clubs/club/16_tons</club_url>
+		</club>
+		<images>
+			<afisha>http://actionlist.ru/img/event/560.jpg</afisha>
+			<afisha_small>http://actionlist.ru/img/event/560_sm.jpg</afisha_small>
+		</images>
+		<ticket>https://ponominalu.ru/event/radiohead</ticket>
+		<description>temp desc</description>
+		<cancellation>0</cancellation>
+		<url>http://actionlist.ru/events/event/aria_13.04</url>
+	</event>
+	<event>
+		<id>561</id>
+		<title>Rolling Stones</title>
+		<date>31.07.2016 17:00</date>
+		<timestamp>1365868800</timestamp>
+		<club>
+			<club_id>11</club_id>
+			<club_name>Gos. Kremlevskiy Dvorec</club_name>
+			<club_adress>ul. Vozdvigenka, 1</club_adress>
+			<club_geo>55.784765:37.560043</club_geo>
+			<club_phone>+7 (495) 620 78 46</club_phone>
+			<club_logo>http://actionlist.ru/img/club/11.jpg</club_logo>
+			<club_url>http://actionlist.ru/clubs/club/16_tons</club_url>
+		</club>
+		<images>
+			<afisha>http://actionlist.ru/img/event/560.jpg</afisha>
+			<afisha_small>http://actionlist.ru/img/event/560_sm.jpg</afisha_small>
+		</images>
+		<genres>
+			<genre>heavy metal</genre>
+			<genre>metal</genre>
+			<genre>rock</genre>
+			<genre>russian</genre>
+		</genres>
+		<ticket>http://ponominalu.ru/event/id/472953</ticket>
+		<description>temp desc</description>
+		<cancellation>0</cancellation>
+		<url>http://actionlist.ru/events/event/aria_13.04</url>
+	</event>
+</events>

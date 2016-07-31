@@ -15,7 +15,7 @@ def getEventList(city):
 	#temporal solution, because we contected ActionList maintainers to get API-key 
 	#and they haven't answered
 	listOfEvents = []
-	w = open("ex_q.xml","r", encoding="UTF-8")
+	w = open(city+".xml","r", encoding="UTF-8")
 	o = xmltodict.parse(w.read())
 	for i in list(o["events"].items())[0][1]:
 		listOfEvents.append(dict(i))
@@ -46,7 +46,7 @@ def getTrackIDs(performer):
 @bot.message_handler(commands=['start'])
 def sendStartMessage(message): 
     #print(message.chat.id, message.text)
-    bot.send_message(message.chat.id, "/city_Moscow & /city_Piter")
+    bot.send_message(message.chat.id, "/city_MSK & /city_SPB")
 
 
 #Get city from user and show list of events
@@ -61,14 +61,16 @@ def sendEventList(message):
 @bot.message_handler(func=lambda m: m.text.startswith("/event_"))
 def eventDetails(message):
 	evId = message.text.split("_")[1]
-	 
-	for i in getTrackIDs("Radiohead"):
-		url = 'http://f.muzis.ru/' + str(i["file_mp3"])
-		print(i.keys())
-		result = urlopen(url).read()
-		bot.send_audio(message.chat.id, result, 300, i["track_name"], i["performer"])
-
+	for i in getEventList("MSK"):
+		if i["id"] == evId:
+			clubData = dict(i['club'])
+			bot.send_message(message.chat.id, i["title"]+"\n"+i["date"]+"\n"+clubData["club_name"]+"\n"+clubData["club_adress"]+"\nTickets: "+i["ticket"])
+			for i in getTrackIDs(i["title"]):
+				url = 'http://f.muzis.ru/' + str(i["file_mp3"])
+				result = urlopen(url).read()
+				bot.send_audio(message.chat.id, result, 300, i["track_name"], i["performer"])
 if __name__ == '__main__':
+	#print(getEventList("MSK"))
 	bot.polling(none_stop=True)
 	
 	
