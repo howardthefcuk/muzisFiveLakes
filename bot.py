@@ -4,6 +4,7 @@ import xmltodict
 import json
 import requests
 from urllib.request import urlopen
+from telebot import types
 
 
 bot = telebot.TeleBot(config.token)
@@ -44,9 +45,11 @@ def getTrackIDs(performer):
 
 #Welcome message - replace with 2 buttons
 @bot.message_handler(commands=['start'])
-def sendStartMessage(message): 
-    #print(message.chat.id, message.text)
-    bot.send_message(message.chat.id, "/city_MSK & /city_SPB")
+def sendStartMessage(message): 	
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
+    markup.add("/city_MSK")
+    markup.add("/city_SPB")
+    bot.send_message(message.chat.id, "This is Five Lakes Event BOt Demo.\nChoose your city:", reply_markup=markup)
 
 
 #Get city from user and show list of events
@@ -69,6 +72,13 @@ def eventDetails(message):
 				url = 'http://f.muzis.ru/' + str(i["file_mp3"])
 				result = urlopen(url).read()
 				bot.send_audio(message.chat.id, result, 300, i["track_name"], i["performer"])
+
+#test - Button
+@bot.message_handler(commands=["test"])
+def any_msg(message):
+    
+
+
 if __name__ == '__main__':
 	#print(getEventList("MSK"))
 	bot.polling(none_stop=True)
