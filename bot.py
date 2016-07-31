@@ -38,8 +38,8 @@ def getTrackIDs(performer):
 	artId = json.loads(r.text)["performers"][0]["id"]
 	r = requests.post('http://muzis.ru/api/get_songs_by_performer.api', data = {'performer_id':artId,'type':'3'})
 	listOfSongs = json.loads(r.text)['songs']
-	a = [x["file_mp3"] for x in listOfSongs]
-	return(a[:5])	
+	#a = [x["file_mp3"] for x in listOfSongs]
+	return(listOfSongs[:5])	
 
 
 #Welcome message - replace with 2 buttons
@@ -58,13 +58,15 @@ def sendEventList(message):
 
 
 #Get event and show: a) Details. b) Send sample tracks
-@bot.message_handler(commands=['test'])
+@bot.message_handler(func=lambda m: m.text.startswith("/event_"))
 def eventDetails(message):
+	evId = message.text.split("_")[1]
+	 
 	for i in getTrackIDs("Radiohead"):
-		url = 'f.muzis.ru/' + str(i)
-		print(url)
+		url = 'http://f.muzis.ru/' + str(i["file_mp3"])
+		print(i.keys())
 		result = urlopen(url).read()
-		bot.send_audio(message.chat.id, result)
+		bot.send_audio(message.chat.id, result, 300, i["track_name"], i["performer"])
 
 if __name__ == '__main__':
 	bot.polling(none_stop=True)
